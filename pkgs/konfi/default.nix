@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1gijas49kk3dfrkp4lnpxcjg089xmjy0vr6ms6f0vw339p0xkba5";
-    aarch64-linux = "17kx7ps1fcw7ff6sgj1dj6cyjczzbycqia6zlx2pd0lmizwm3n22";
-    x86_64-darwin = "1mrpnzgjqwrzn063lkmilapsfq697kkbpij8846qlrz58a2r7c0m";
-    aarch64-darwin = "07gf2igdn306vf3d94c88ix3025cs358x4qfh1pbgqbwlawzq6yy";
+    x86_64-linux = "0j86nq66gkl72v3jgbb0kp53n2hsyzkgir9jdkzyr7sr3rfq5mmp";
+    aarch64-linux = "0w8wj5v1gw8cgfh2vsyawg8hwwynsvsm87hbhlrpk1fpyl01p329";
+    x86_64-darwin = "0y592y2paj0q58gkw8dm9xrbnsls4ph1r8j1dnprcylng7cgnz06";
+    aarch64-darwin = "0mss7jjxwxxgm4xyrcnpsvws9q2g2ng98nhynzgb2whd4dhsvynf";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/getkonfi/konfi/releases/download/v0.32.4/konfi_0.32.4_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/getkonfi/konfi/releases/download/v0.32.4/konfi_0.32.4_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/getkonfi/konfi/releases/download/v0.32.4/konfi_0.32.4_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/getkonfi/konfi/releases/download/v0.32.4/konfi_0.32.4_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/getkonfi/konfi/releases/download/v1.0.0/konfi_1.0.0_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/getkonfi/konfi/releases/download/v1.0.0/konfi_1.0.0_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/getkonfi/konfi/releases/download/v1.0.0/konfi_1.0.0_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/getkonfi/konfi/releases/download/v1.0.0/konfi_1.0.0_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "konfi";
-  version = "0.32.4";
+  version = "1.0.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
